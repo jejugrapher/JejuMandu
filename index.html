@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>제주그래퍼 × 장인만두 - 전략적 파트너십</title>
+    <title>제주그래퍼 × 장인만두 | 강한 소상공인 협력 프로젝트</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,10 +13,9 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Noto Sans KR', sans-serif;
             line-height: 1.6;
             color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
 
         .container {
@@ -24,85 +24,96 @@
             padding: 0 20px;
         }
 
+        /* Header */
         .header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
             padding: 2rem 0;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .header-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .stat-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #FFD700;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Navigation */
+        .nav {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             position: sticky;
             top: 0;
             z-index: 100;
         }
 
-        .header-content {
+        .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .logo-section {
-            display: flex;
-            align-items: center;
-            gap: 30px;
+            padding: 1rem 0;
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #4a5568;
-        }
-
-        .partnership-symbol {
-            font-size: 2rem;
+            font-size: 1.3rem;
+            font-weight: 700;
             color: #667eea;
-            animation: pulse 2s infinite;
         }
 
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
         }
 
-        .hero {
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.9), rgba(118, 75, 162, 0.9));
-            color: white;
-            padding: 5rem 0;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: #ff6b6b;
-            color: white;
-            padding: 1rem 2rem;
+        .nav-link {
             text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+            color: #555;
+            font-weight: 500;
+            transition: color 0.3s;
         }
 
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
+        .nav-link:hover {
+            color: #667eea;
         }
 
+        /* Sections */
         .section {
             padding: 4rem 0;
-            background: white;
         }
 
         .section:nth-child(even) {
@@ -110,105 +121,116 @@
         }
 
         .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
             text-align: center;
-            font-size: 2.5rem;
             margin-bottom: 3rem;
-            color: #2d3748;
+            color: #2c3e50;
             position: relative;
         }
 
         .section-title::after {
             content: '';
             display: block;
-            width: 80px;
+            width: 60px;
             height: 4px;
             background: linear-gradient(90deg, #667eea, #764ba2);
-            margin: 1rem auto;
+            margin: 1rem auto 0;
             border-radius: 2px;
         }
 
-        .partners-grid {
+        /* Cards */
+        .card-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            margin-bottom: 3rem;
+            gap: 2rem;
+            margin-bottom: 2rem;
         }
 
-        .partner-card {
+        .card-grid-2 { grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); }
+        .card-grid-3 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+
+        .card {
             background: white;
-            padding: 2rem;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-            border: 1px solid #e2e8f0;
+            padding: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #eee;
         }
 
-        .partner-card:hover {
+        .card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .card-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .card-content {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Partner Cards */
+        .partner-card {
+            text-align: center;
+        }
+
+        .partner-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
         }
 
         .partner-name {
             font-size: 1.5rem;
-            font-weight: bold;
+            font-weight: 700;
             color: #667eea;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
         }
 
         .partner-role {
-            color: #718096;
+            color: #888;
             margin-bottom: 1rem;
-            font-style: italic;
         }
 
-        .partner-strengths {
+        .partner-skills {
             list-style: none;
+            text-align: left;
         }
 
-        .partner-strengths li {
-            padding: 0.5rem 0;
+        .partner-skills li {
+            padding: 0.3rem 0;
             position: relative;
             padding-left: 1.5rem;
         }
 
-        .partner-strengths li::before {
-            content: '✦';
-            color: #667eea;
+        .partner-skills li::before {
+            content: '✓';
             position: absolute;
             left: 0;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .service-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            border-left: 4px solid #667eea;
-        }
-
-        .service-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-        }
-
-        .service-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .service-title {
-            font-size: 1.3rem;
+            color: #667eea;
             font-weight: bold;
-            margin-bottom: 1rem;
-            color: #2d3748;
         }
 
+        /* Pricing Section */
         .pricing-container {
             background: linear-gradient(135deg, #667eea, #764ba2);
             color: white;
@@ -217,72 +239,77 @@
             margin: 2rem 0;
         }
 
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .pricing-total {
+            font-size: 3rem;
+            font-weight: 900;
+            color: #FFD700;
+        }
+
         .pricing-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            gap: 1.5rem;
         }
 
         .pricing-item {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255,255,255,0.1);
             padding: 1.5rem;
             border-radius: 10px;
             backdrop-filter: blur(10px);
         }
 
-        .pricing-title {
-            font-size: 1.2rem;
-            font-weight: bold;
+        .pricing-service {
+            font-weight: 600;
             margin-bottom: 0.5rem;
         }
 
         .pricing-amount {
-            font-size: 1.5rem;
-            color: #ffd93d;
-            font-weight: bold;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #FFD700;
         }
 
+        .pricing-desc {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Timeline */
         .timeline {
             position: relative;
-            padding: 2rem 0;
+            margin: 2rem 0;
         }
 
         .timeline::before {
             content: '';
             position: absolute;
-            left: 50%;
+            left: 30px;
             top: 0;
             bottom: 0;
             width: 2px;
             background: #667eea;
-            transform: translateX(-50%);
         }
 
         .timeline-item {
-            display: flex;
-            margin: 2rem 0;
             position: relative;
+            padding-left: 80px;
+            margin-bottom: 3rem;
         }
 
-        .timeline-item:nth-child(even) {
-            flex-direction: row-reverse;
-        }
-
-        .timeline-content {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            width: 45%;
-            position: relative;
-        }
-
-        .timeline-item:nth-child(even) .timeline-content {
-            margin-right: 10%;
-        }
-
-        .timeline-item:nth-child(odd) .timeline-content {
-            margin-left: 10%;
+        .timeline-marker {
+            position: absolute;
+            left: 20px;
+            width: 20px;
+            height: 20px;
+            background: #667eea;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 0 0 4px #667eea;
         }
 
         .timeline-phase {
@@ -291,390 +318,678 @@
             padding: 0.5rem 1rem;
             border-radius: 20px;
             font-size: 0.9rem;
-            font-weight: bold;
+            font-weight: 600;
             display: inline-block;
             margin-bottom: 1rem;
         }
 
-        .contact-section {
-            background: linear-gradient(135deg, #2d3748, #4a5568);
+        .timeline-content {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Progress Bars */
+        .progress-container {
+            margin: 2rem 0;
+        }
+
+        .progress-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .progress-bar {
+            height: 8px;
+            background: #e9ecef;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 4px;
+            transition: width 1s ease;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
             color: white;
             text-align: center;
             padding: 4rem 0;
         }
 
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            margin-top: 2rem;
-        }
-
-        .contact-card {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 2rem;
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-        }
-
-        .contact-title {
-            font-size: 1.3rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
-            color: #ffd93d;
-        }
-
-        .pilot-highlight {
-            background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+        .cta-button {
+            display: inline-block;
+            background: #e74c3c;
             color: white;
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            margin: 0.5rem;
+        }
+
+        .cta-button:hover {
+            background: #c0392b;
+            transform: translateY(-2px);
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            border: 2px solid white;
+        }
+
+        .cta-button.secondary:hover {
+            background: white;
+            color: #2c3e50;
+        }
+
+        /* Contact Info */
+        .contact-info {
+            background: white;
             padding: 2rem;
             border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
             margin: 2rem 0;
-            text-align: center;
         }
 
-        .pilot-highlight h3 {
-            font-size: 1.5rem;
+        .contact-item {
             margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
         }
 
-        .pilot-details {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .pilot-detail {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 1rem;
-            border-radius: 8px;
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .header-content {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            
-            .timeline::before {
-                left: 20px;
-            }
-            
-            .timeline-content {
-                width: calc(100% - 40px);
-                margin-left: 40px !important;
-                margin-right: 0 !important;
-            }
-            
-            .timeline-item {
-                flex-direction: column !important;
-            }
-        }
-
-        .floating-action {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: #ff6b6b;
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: #667eea;
             color: white;
-            width: 60px;
-            height: 60px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
-            text-decoration: none;
-            box-shadow: 0 4px 20px rgba(255, 107, 107, 0.4);
-            transition: all 0.3s ease;
-            animation: bounce 2s infinite;
+            margin-right: 1rem;
         }
 
-        .floating-action:hover {
-            transform: scale(1.1);
+        /* Footer */
+        .footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
         }
 
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-10px); }
-            60% { transform: translateY(-5px); }
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 { font-size: 2rem; }
+            .nav-menu { display: none; }
+            .card-grid-2, .card-grid-3 { grid-template-columns: 1fr; }
+            .timeline-item { padding-left: 60px; }
+            .timeline::before { left: 20px; }
+            .timeline-marker { left: 10px; }
         }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        /* Utility Classes */
+        .text-center { text-align: center; }
+        .mb-2 { margin-bottom: 1rem; }
+        .mb-3 { margin-bottom: 1.5rem; }
+        .highlight { color: #e74c3c; font-weight: 700; }
     </style>
 </head>
 <body>
+    <!-- Header -->
     <header class="header">
         <div class="container">
-            <div class="header-content">
-                <div class="logo-section">
-                    <div class="logo">제주그래퍼</div>
-                    <div class="partnership-symbol">🤝</div>
-                    <div class="logo">장인만두</div>
+            <h1>제주그래퍼 × 장인만두</h1>
+            <p>제주 장인정신과 디지털 혁신의 만남으로 만드는 '강한 소상공인' 성장 스토리</p>
+            
+            <div class="header-stats">
+                <div class="stat-card">
+                    <span class="stat-number">5,300만원</span>
+                    <span class="stat-label">총 프로젝트 비용</span>
                 </div>
-                <nav>
-                    <a href="#services" style="margin-right: 2rem; text-decoration: none; color: #4a5568; font-weight: 500;">서비스</a>
-                    <a href="#pricing" style="margin-right: 2rem; text-decoration: none; color: #4a5568; font-weight: 500;">비용</a>
-                    <a href="#timeline" style="margin-right: 2rem; text-decoration: none; color: #4a5568; font-weight: 500;">일정</a>
-                    <a href="#contact" style="text-decoration: none; color: #4a5568; font-weight: 500;">연락처</a>
-                </nav>
+                <div class="stat-card">
+                    <span class="stat-number">최대 1억원</span>
+                    <span class="stat-label">정부 지원금</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">300만원</span>
+                    <span class="stat-label">파일럿 시작 비용</span>
+                </div>
             </div>
         </div>
     </header>
 
-    <section class="hero">
+    <!-- Navigation -->
+    <nav class="nav">
         <div class="container">
-            <h1>전통의 맛 × AI 기술의 만남</h1>
-            <p>제주 장인정신과 첨단 디지털 기술이 만나 글로벌 K-푸드 브랜드를 만듭니다</p>
-            <a href="#pilot" class="cta-button">파일럿 프로젝트 시작하기</a>
+            <div class="nav-container">
+                <div class="logo">제주그래퍼 × 장인만두</div>
+                <ul class="nav-menu">
+                    <li><a href="#partners" class="nav-link">파트너 소개</a></li>
+                    <li><a href="#services" class="nav-link">협력 서비스</a></li>
+                    <li><a href="#pricing" class="nav-link">비용 구조</a></li>
+                    <li><a href="#roadmap" class="nav-link">실행 계획</a></li>
+                    <li><a href="#contact" class="nav-link">문의하기</a></li>
+                </ul>
+            </div>
         </div>
-    </section>
+    </nav>
 
+    <!-- 프로젝트 개요 -->
     <section class="section">
         <div class="container">
-            <h2 class="section-title">파트너십 개요</h2>
-            <div class="partners-grid">
-                <div class="partner-card">
-                    <div class="partner-name">🎬 제주그래퍼 (전현석 대표)</div>
-                    <div class="partner-role">제주 특화 디지털 콘텐츠 전문 기업</div>
-                    <ul class="partner-strengths">
-                        <li>AI 콘텐츠 생성 및 영상 제작</li>
-                        <li>3D 모델링 및 360° VR 기술</li>
-                        <li>드론 촬영 및 시네마틱 영상</li>
-                        <li>제주 지역 특화 스토리텔링</li>
-                        <li>인터랙티브 웹 개발</li>
-                    </ul>
-                </div>
-                <div class="partner-card">
-                    <div class="partner-name">🥟 장인만두 (이인철 대표)</div>
-                    <div class="partner-role">제주 프리미엄 수제 만두 전문 기업</div>
-                    <ul class="partner-strengths">
-                        <li>HACCP 인증 3개 동 생산시설</li>
-                        <li>제주산 특산물 활용 독창적 제품</li>
-                        <li>3세대 전통 스토리 보유</li>
-                        <li>영상 PD 출신 대표의 미디어 전문성</li>
-                        <li>AI 기술에 대한 높은 관심과 이해</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section" id="services">
-        <div class="container">
-            <h2 class="section-title">핵심 협업 서비스</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">🎥</div>
-                    <div class="service-title">AI 브랜드 스토리 영상화</div>
-                    <p>할머니 3세대 스토리와 유기견 보호 이야기를 AI 기술로 감동적인 영상으로 제작합니다.</p>
-                    <ul style="margin-top: 1rem; list-style: none;">
-                        <li>• 3-5분 브랜드 다큐멘터리</li>
-                        <li>• 30초-1분 숏폼 영상 시리즈</li>
-                        <li>• 소셜미디어 최적화 콘텐츠</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🥟</div>
-                    <div class="service-title">3D 제품 시각화</div>
-                    <p>독특한 색상의 만두를 3D 스캐닝으로 디지털화하여 온라인 체험을 혁신합니다.</p>
-                    <ul style="margin-top: 1rem; list-style: none;">
-                        <li>• 초고해상도 3D 제품 모델링</li>
-                        <li>• 인터랙티브 360도 뷰어</li>
-                        <li>• 웹사이트 연동 개발</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🏭</div>
-                    <div class="service-title">360° VR 공장 투어</div>
-                    <p>HACCP 인증 생산시설을 360° VR로 촬영하여 고객 신뢰도를 높입니다.</p>
-                    <ul style="margin-top: 1rem; list-style: none;">
-                        <li>• 생산시설 가상 투어</li>
-                        <li>• 인터랙티브 웹사이트 구축</li>
-                        <li>• 제주산 식재료 연계 콘텐츠</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🤖</div>
-                    <div class="service-title">AI 기술 완전 이전</div>
-                    <p>이인철 대표님의 PD 경험을 바탕으로 AI 콘텐츠 제작 기술을 완전히 이전합니다.</p>
-                    <ul style="margin-top: 1rem; list-style: none;">
-                        <li>• 3개월 집중 1:1 교육</li>
-                        <li>• 자동화 배포 시스템 구축</li>
-                        <li>• 완전 자립 운영 지원</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section" id="pricing">
-        <div class="container">
-            <h2 class="section-title">투명한 비용 구조</h2>
-            <div class="pricing-container">
-                <h3 style="text-align: center; font-size: 1.8rem; margin-bottom: 2rem;">
-                    총 프로젝트 비용: 5,300만원
-                </h3>
-                <div class="pricing-grid">
-                    <div class="pricing-item">
-                        <div class="pricing-title">브랜드 스토리 영상</div>
-                        <div class="pricing-amount">1,500만원</div>
-                        <p style="margin-top: 0.5rem; opacity: 0.9;">3-5분 다큐멘터리 제작</p>
-                    </div>
-                    <div class="pricing-item">
-                        <div class="pricing-title">숏폼 영상 시리즈</div>
-                        <div class="pricing-amount">1,000만원</div>
-                        <p style="margin-top: 0.5rem; opacity: 0.9;">10개 영상 제작</p>
-                    </div>
-                    <div class="pricing-item">
-                        <div class="pricing-title">360° VR 공장 투어</div>
-                        <div class="pricing-amount">800만원</div>
-                        <p style="margin-top: 0.5rem; opacity: 0.9;">촬영 + 웹 개발</p>
-                    </div>
-                    <div class="pricing-item">
-                        <div class="pricing-title">3D 제품 모델링</div>
-                        <div class="pricing-amount">600만원</div>
-                        <p style="margin-top: 0.5rem; opacity: 0.9;">4종 만두 3D 제작</p>
-                    </div>
-                    <div class="pricing-item">
-                        <div class="pricing-title">AI 기술 교육</div>
-                        <div class="pricing-amount">1,200만원</div>
-                        <p style="margin-top: 0.5rem; opacity: 0.9;">3개월 집중 교육</p>
-                    </div>
-                    <div class="pricing-item">
-                        <div class="pricing-title">자동화 시스템</div>
-                        <div class="pricing-amount">800만원</div>
-                        <p style="margin-top: 0.5rem; opacity: 0.9;">배포 시스템 구축</p>
-                    </div>
-                </div>
-                <div style="text-align: center; margin-top: 2rem; padding: 1rem; background: rgba(255, 255, 255, 0.1); border-radius: 10px;">
-                    <h4>정부 지원금 활용</h4>
-                    <p>'강한 소상공인' 사업 6,000만원으로 대부분 충당 가능</p>
-                    <p>장인만두 추가 투자: 약 800만원</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section" id="pilot">
-        <div class="container">
-            <h2 class="section-title">파일럿 프로젝트</h2>
-            <div class="pilot-highlight">
-                <h3>🚀 위험 없는 시작: 2주 파일럿 프로젝트</h3>
-                <p>본격적인 협업 전, 실제 결과물을 확인해보세요!</p>
-                <div class="pilot-details">
-                    <div class="pilot-detail">
-                        <strong>비용</strong><br>
-                        300만원
-                    </div>
-                    <div class="pilot-detail">
-                        <strong>기간</strong><br>
-                        2주
-                    </div>
-                    <div class="pilot-detail">
-                        <strong>결과물</strong><br>
-                        영상 2개 + 교육 4회
-                    </div>
-                    <div class="pilot-detail">
-                        <strong>활용</strong><br>
-                        정부 발표 자료
-                    </div>
-                </div>
-                <p style="margin-top: 1rem;">
-                    <strong>포함 내용:</strong> 할머니 스토리 1분 영상 + 유기견 숏폼 영상 + AI 도구 기초 교육 4회
+            <h2 class="section-title">프로젝트 개요</h2>
+            <div class="card text-center">
+                <p style="font-size: 1.2rem; line-height: 1.8; color: #555;">
+                    제주 향토 음식의 정수를 담은 <span class="highlight">'장인만두'</span>와 제주의 디지털 기술 혁신을 선도하는 <span class="highlight">'제주그래퍼'</span>의 전략적 협력입니다.<br><br>
+                    <strong>'강한 소상공인' 성장 지원 사업</strong>을 발판 삼아, 전통적 가치와 최첨단 기술을 결합하여 <span class="highlight">글로벌 K-푸드 브랜드</span>로의 도약을 목표로 합니다.
                 </p>
             </div>
         </div>
     </section>
 
-    <section class="section" id="timeline">
+    <!-- 파트너 소개 -->
+    <section class="section" id="partners">
         <div class="container">
-            <h2 class="section-title">단계별 실행 계획</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-phase">Phase 1: 기반 구축 (3개월)</div>
-                        <h4>핵심 콘텐츠 제작 및 교육 시작</h4>
-                        <ul style="margin-top: 1rem;">
-                            <li>브랜드 스토리 영상 제작 완료</li>
-                            <li>숏폼 영상 5개 우선 제작</li>
-                            <li>AI 교육 시작 (월 8회)</li>
-                            <li>360° 공장 투어 제작</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-phase">Phase 2: 역량 강화 (3개월)</div>
-                        <h4>기술 이전 및 시스템 구축</h4>
-                        <ul style="margin-top: 1rem;">
-                            <li>나머지 숏폼 영상 완성</li>
-                            <li>3D 제품 모델링 완료</li>
-                            <li>자동화 배포 시스템 구축</li>
-                            <li>완전 자립 운영 체계 확립</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-phase">Phase 3: 자립 운영 (6개월)</div>
-                        <h4>완전 자립 및 해외 진출</h4>
-                        <ul style="margin-top: 1rem;">
-                            <li>자체 콘텐츠 제작 정기 업로드</li>
-                            <li>애견 만두 해외 마케팅</li>
-                            <li>성과 분석 및 전략 최적화</li>
-                            <li>추가 제품 라인 확장</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="contact-section" id="contact">
-        <div class="container">
-            <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">지금 시작하세요</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 2rem;">
-                제주의 전통과 미래 기술이 만나는 혁신적 여정에 함께하세요
-            </p>
-            <div class="contact-grid">
-                <div class="contact-card">
-                    <div class="contact-title">📞 즉시 연락</div>
-                    <p>1주 내 대면 미팅 가능</p>
-                    <p><strong>제주그래퍼 전현석 대표</strong></p>
-                    <p>연락처: [실제 연락처]</p>
-                    <p>이메일: [실제 이메일]</p>
-                </div>
-                <div class="contact-card">
-                    <div class="contact-title">🎯 Next Steps</div>
-                    <ul style="text-align: left; margin-top: 1rem;">
-                        <li>1주 내: 대면 미팅 및 현장 방문</li>
-                        <li>2주 내: 파일럿 프로젝트 시작</li>
-                        <li>1개월 내: 정부 지원금 활용 시작</li>
+            <h2 class="section-title">핵심 파트너</h2>
+            <div class="card-grid card-grid-2">
+                <div class="card partner-card">
+                    <div class="partner-avatar">🎬</div>
+                    <div class="partner-name">제주그래퍼 (전현석 대표)</div>
+                    <div class="partner-role">제주 특화 디지털 콘텐츠 전문 기업</div>
+                    <ul class="partner-skills">
+                        <li>AI 콘텐츠 생성 (이미지, 영상, 오디오)</li>
+                        <li>3D 모델링 (포토그래메트리, 가우시안 스플래팅)</li>
+                        <li>드론 기술 (시네마틱, FPV, 멀티스펙트럴)</li>
+                        <li>360° VR 몰입형 콘텐츠 제작</li>
+                        <li>인터랙티브 웹 경험 구축</li>
+                        <li>제주 지역 특화 5년 경험</li>
                     </ul>
                 </div>
-                <div class="contact-card">
-                    <div class="contact-title">💼 정부 지원</div>
-                    <p>'강한 소상공인' 1차 발표 지원</p>
-                    <p>최대 1억원 지원금 활용</p>
-                    <p>위험 최소화, 확실한 성과</p>
+
+                <div class="card partner-card">
+                    <div class="partner-avatar">🥟</div>
+                    <div class="partner-name">장인만두 (이인철 대표)</div>
+                    <div class="partner-role">제주 프리미엄 수제 만두 전문점</div>
+                    <ul class="partner-skills">
+                        <li>영상 PD 출신의 미디어 전문성</li>
+                        <li>AI 기술에 대한 높은 관심과 이해</li>
+                        <li>HACCP 인증 3개 동 생산시설</li>
+                        <li>제주산 특산물 활용 독창적 제품</li>
+                        <li>3세대 전통 스토리 자산 보유</li>
+                        <li>직영매장 4곳 + 온라인 + B2B 유통</li>
+                    </ul>
                 </div>
             </div>
-            <div style="margin-top: 3rem;">
-                <a href="#pilot" class="cta-button" style="font-size: 1.1rem; padding: 1.2rem 2.5rem;">
-                    파일럿 프로젝트 문의하기
-                </a>
+
+            <div class="card">
+                <h3 class="card-title">🤝 협력의 핵심 시너지</h3>
+                <div class="card-content">
+                    <p><strong>이인철 대표의 영상 PD 경험</strong>과 <strong>AI 기술 관심</strong>이 제주그래퍼의 첨단 기술력과 만나, 단순한 기술 지원을 넘어 <strong>진정한 협력 파트너십</strong>을 구축합니다.</p>
+                    <p class="mt-2">특히 할머니 3세대 스토리, 유기견 4마리와의 인연 등 <strong>풍부한 브랜드 자산</strong>을 AI 기술로 영상화하여 감동적인 글로벌 콘텐츠로 재탄생시킵니다.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <a href="#contact" class="floating-action">💬</a>
+    <!-- 협력 서비스 -->
+    <section class="section" id="services">
+        <div class="container">
+            <h2 class="section-title">핵심 협력 서비스</h2>
+            <div class="card-grid card-grid-3">
+                <div class="card">
+                    <span class="card-icon">🎬</span>
+                    <h3 class="card-title">AI 브랜드 스토리 영상화</h3>
+                    <div class="card-content">
+                        <p>할머니 3세대 스토리와 유기견 보호 이야기를 AI 기술로 감동적인 영상 콘텐츠로 제작</p>
+                        <ul style="margin-top: 1rem; list-style: none;">
+                            <li>• 3-5분 브랜드 다큐멘터리</li>
+                            <li>• 30초-1분 숏폼 영상 시리즈</li>
+                            <li>• 애견 만두 해외 마케팅용</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <span class="card-icon">🤖</span>
+                    <h3 class="card-title">AI 기술 완전 이전</h3>
+                    <div class="card-content">
+                        <p>이인철 대표의 PD 경험을 바탕으로 AI 콘텐츠 제작 기술을 완전히 습득</p>
+                        <ul style="margin-top: 1rem; list-style: none;">
+                            <li>• 3개월 집중 1:1 교육</li>
+                            <li>• 자체 콘텐츠 제작 역량</li>
+                            <li>• 지속적 마케팅 자립화</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <span class="card-icon">🌍</span>
+                    <h3 class="card-title">글로벌 자동 배포</h3>
+                    <div class="card-content">
+                        <p>AI 기반 다국어 번역 및 플랫폼별 최적화 자동 업로드 시스템</p>
+                        <ul style="margin-top: 1rem; list-style: none;">
+                            <li>• 다국어 자동 번역</li>
+                            <li>• 플랫폼별 최적화</li>
+                            <li>• 해외 시장 직접 공략</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <span class="card-icon">🏭</span>
+                    <h3 class="card-title">360° VR 공장 투어</h3>
+                    <div class="card-content">
+                        <p>HACCP 인증 생산시설을 360° VR로 투명하게 공개하여 신뢰도 제고</p>
+                        <ul style="margin-top: 1rem; list-style: none;">
+                            <li>• 생산 과정 투명 공개</li>
+                            <li>• 인터랙티브 웹 구축</li>
+                            <li>• B2B 신뢰도 향상</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <span class="card-icon">🥟</span>
+                    <h3 class="card-title">3D 제품 시각화</h3>
+                    <div class="card-content">
+                        <p>독특한 색상의 만두를 초고해상도 3D로 모델링하여 온라인 체험 혁신</p>
+                        <ul style="margin-top: 1rem; list-style: none;">
+                            <li>• 360도 인터랙티브 뷰어</li>
+                            <li>• AR 체험 기능</li>
+                            <li>• 온라인 구매 전환율 향상</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <span class="card-icon">⚙️</span>
+                    <h3 class="card-title">운영 효율화</h3>
+                    <div class="card-content">
+                        <p>LLM 기반 문서 관리, 유통 규격 관리 등 내부 운영 자동화</p>
+                        <ul style="margin-top: 1rem; list-style: none;">
+                            <li>• AI 기반 업무 자동화</li>
+                            <li>• 생산성 대폭 향상</li>
+                            <li>• 데이터 기반 의사결정</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 비용 구조 -->
+    <section class="section" id="pricing">
+        <div class="container">
+            <h2 class="section-title">투명한 비용 구조</h2>
+            
+            <div class="pricing-container">
+                <div class="pricing-header">
+                    <h3>총 프로젝트 비용</h3>
+                    <div class="pricing-total">5,300만원</div>
+                </div>
+                
+                <div class="pricing-grid">
+                    <div class="pricing-item">
+                        <div class="pricing-service">브랜드 스토리 영상</div>
+                        <div class="pricing-amount">1,500만원</div>
+                        <div class="pricing-desc">3-5분 다큐멘터리 제작</div>
+                    </div>
+                    <div class="pricing-item">
+                        <div class="pricing-service">숏폼 영상 시리즈</div>
+                        <div class="pricing-amount">1,000만원</div>
+                        <div class="pricing-desc">10개 영상 제작</div>
+                    </div>
+                    <div class="pricing-item">
+                        <div class="pricing-service">AI 기술 교육</div>
+                        <div class="pricing-amount">1,200만원</div>
+                        <div class="pricing-desc">3개월 집중 교육</div>
+                    </div>
+                    <div class="pricing-item">
+                        <div class="pricing-service">360° VR 공장투어</div>
+                        <div class="pricing-amount">800만원</div>
+                        <div class="pricing-desc">촬영 + 웹 개발</div>
+                    </div>
+                    <div class="pricing-item">
+                        <div class="pricing-service">3D 제품 모델링</div>
+                        <div class="pricing-amount">600만원</div>
+                        <div class="pricing-desc">4종 만두 3D 제작</div>
+                    </div>
+                    <div class="pricing-item">
+                        <div class="pricing-service">자동화 시스템</div>
+                        <div class="pricing-amount">200만원</div>
+                        <div class="pricing-desc">배포 시스템 기본</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-grid card-grid-2">
+                <div class="card">
+                    <h3 class="card-title">💰 정부 지원금 활용</h3>
+                    <div class="card-content">
+                        <p><strong>1차 선정:</strong> 6,000만원</p>
+                        <p><strong>최종 선정:</strong> 추가 4,000만원</p>
+                        <p><strong>총 최대:</strong> 1억원</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3 class="card-title">🚀 파일럿 프로젝트</h3>
+                    <div class="card-content">
+                        <p><strong>비용:</strong> 300만원 (2주)</p>
+                        <p><strong>포함:</strong> 영상 2개 + 교육 4회</p>
+                        <p><strong>목적:</strong> 위험 없는 협업 검증</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 기대 효과 -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">기대 효과 및 성장 비전</h2>
+            
+            <div class="card">
+                <h3 class="card-title text-center">주요 성장 목표 (12개월)</h3>
+                <div class="progress-container">
+                    <div class="progress-item">
+                        <div class="progress-label">
+                            <span>브랜드 인지도</span>
+                            <span class="highlight">500% 향상</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 100%" data-width="100"></div>
+                        </div>
+                    </div>
+                    <div class="progress-item">
+                        <div class="progress-label">
+                            <span>온라인 매출</span>
+                            <span class="highlight">300% 증가</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 60%" data-width="60"></div>
+                        </div>
+                    </div>
+                    <div class="progress-item">
+                        <div class="progress-label">
+                            <span>글로벌 도달률</span>
+                            <span class="highlight">400% 증가</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 80%" data-width="80"></div>
+                        </div>
+                    </div>
+                    <div class="progress-item">
+                        <div class="progress-label">
+                            <span>AI 역량 확보</span>
+                            <span class="highlight">100% 달성</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 20%" data-width="20"></div>
+                        </div>
+                    </div>
+                    <div class="progress-item">
+                        <div class="progress-label">
+                            <span>신규 고객 유치</span>
+                            <span class="highlight">250% 증가</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 50%" data-width="50"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-grid card-grid-2">
+                <div class="card">
+                    <h3 class="card-title">🎯 단기 목표 (12개월)</h3>
+                    <div class="card-content">
+                        <ul style="list-style: none;">
+                            <li>✅ 브랜드 인지도 500% 향상</li>
+                            <li>✅ 온라인 매출 300% 증가</li>
+                            <li>✅ 해외 시장 진출 (3개국)</li>
+                            <li>✅ AI 콘텐츠 제작 자립 역량 확보</li>
+                            <li>✅ 애견 만두 글로벌 브랜드화</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3 class="card-title">🚀 장기 비전 (2-3년)</h3>
+                    <div class="card-content">
+                        <ul style="list-style: none;">
+                            <li>🌟 제주 대표 글로벌 K-푸드 브랜드</li>
+                            <li>🌟 AI 기반 콘텐츠 커머스 기업 전환</li>
+                            <li>🌟 제주 지역 혁신 모델 사례</li>
+                            <li>🌟 전국 프랜차이즈 디지털화 선도</li>
+                            <li>🌟 신규 고용 창출 및 지역 경제 기여</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 실행 계획 -->
+    <section class="section" id="roadmap">
+        <div class="container">
+            <h2 class="section-title">단계별 실행 로드맵</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-phase">Phase 1: 기반 구축 (3개월)</div>
+                    <div class="timeline-content">
+                        <h4><strong>핵심 콘텐츠 제작 및 AI 기술 교육 시작</strong></h4>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 1rem;">
+                            <div>
+                                <h5 style="color: #667eea; margin-bottom: 0.5rem;">🎬 콘텐츠 제작</h5>
+                                <ul style="font-size: 0.9rem; line-height: 1.4;">
+                                    <li>"장인의 이야기" 숏폼 영상 시리즈 제작</li>
+                                    <li>할머니/유기견 스토리 영상화</li>
+                                    <li>주요 만두 제품 3D 모델 제작</li>
+                                    <li>애견 만두 초기 마케팅 런칭</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h5 style="color: #667eea; margin-bottom: 0.5rem;">🎓 기술 교육</h5>
+                                <ul style="font-size: 0.9rem; line-height: 1.4;">
+                                    <li>이인철 대표 AI 도구 교육 시작</li>
+                                    <li>직원 대상 기본 디지털 마케팅 교육</li>
+                                    <li>성과 측정 시스템 구축</li>
+                                    <li>'강한 소상공인' 지원금 활용 시작</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-phase">Phase 2: 역량 강화 (3개월)</div>
+                    <div class="timeline-content">
+                        <h4><strong>기술 이전 완성 및 글로벌 시스템 구축</strong></h4>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 1rem;">
+                            <div>
+                                <h5 style="color: #667eea; margin-bottom: 0.5rem;">🌍 시스템 구축</h5>
+                                <ul style="font-size: 0.9rem; line-height: 1.4;">
+                                    <li>AI 기반 다국어 자동 배포 시스템</li>
+                                    <li>360° VR 공장 투어 완성</li>
+                                    <li>3D 제품 인터랙티브 뷰어 고도화</li>
+                                    <li>글로벌 소셜미디어 마케팅 시작</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h5 style="color: #667eea; margin-bottom: 0.5rem;">🎯 자립 준비</h5>
+                                <ul style="font-size: 0.9rem; line-height: 1.4;">
+                                    <li>장인만두 자체 콘텐츠 제작 시작</li>
+                                    <li>해외 시장 타겟 콘텐츠 유통</li>
+                                    <li>성과 분석 및 전략 최적화</li>
+                                    <li>완전 자립 운영 체계 구축</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-phase">Phase 3: 확장 및 혁신 (6개월+)</div>
+                    <div class="timeline-content">
+                        <h4><strong>완전 자립 운영 및 지속적 혁신</strong></h4>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 1rem;">
+                            <div>
+                                <h5 style="color: #667eea; margin-bottom: 0.5rem;">🏢 사업 확장</h5>
+                                <ul style="font-size: 0.9rem; line-height: 1.4;">
+                                    <li>LLM 기반 내부 운영 효율화</li>
+                                    <li>AI 트렌드 분석을 통한 신제품 개발</li>
+                                    <li>국내외 시장 확장 전략 실행</li>
+                                    <li>프랜차이즈 시스템 디지털화</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h5 style="color: #667eea; margin-bottom: 0.5rem;">🌱 지역 기여</h5>
+                                <ul style="font-size: 0.9rem; line-height: 1.4;">
+                                    <li>신규 인력 채용 및 고용 창출</li>
+                                    <li>제주 AI 기술 활용 선도 사례</li>
+                                    <li>지역 경제 활성화 기여</li>
+                                    <li>중장기 혁신 로드맵 수립</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 연락처 -->
+    <section class="section" id="contact">
+        <div class="container">
+            <h2 class="section-title">협력 문의</h2>
+            
+            <div class="card-grid card-grid-2">
+                <div class="contact-info">
+                    <h3 style="color: #667eea; margin-bottom: 1.5rem; font-size: 1.3rem;">📞 제주그래퍼 연락처</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon">👤</div>
+                        <div>
+                            <strong>대표:</strong> 전현석<br>
+                            <small>제주그래퍼 대표이사</small>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div>
+                            <strong>이메일:</strong><br>
+                            <a href="mailto:whipia@naver.com" style="color: #667eea;">whipia@naver.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📱</div>
+                        <div>
+                            <strong>연락처:</strong><br>
+                            <a href="tel:010-6778-9199" style="color: #667eea;">010-6778-9199</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">🎥</div>
+                        <div>
+                            <strong>포트폴리오:</strong><br>
+                            <a href="https://www.youtube.com/@jejugrapher" target="_blank" style="color: #667eea;">제주그래퍼 유튜브 채널</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-info">
+                    <h3 style="color: #667eea; margin-bottom: 1.5rem; font-size: 1.3rem;">🎯 Next Steps</h3>
+                    <div style="space-y: 1rem;">
+                        <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                            <div style="width: 30px; height: 30px; background: #e74c3c; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1rem; font-weight: bold;">1</div>
+                            <div>
+                                <strong>1주 내: 대면 미팅</strong><br>
+                                <small>현장 방문 및 상호 이해</small>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                            <div style="width: 30px; height: 30px; background: #3498db; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1rem; font-weight: bold;">2</div>
+                            <div>
+                                <strong>2주 내: 파일럿 시작</strong><br>
+                                <small>300만원 파일럿 프로젝트</small>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                            <div style="width: 30px; height: 30px; background: #27ae60; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1rem; font-weight: bold;">3</div>
+                            <div>
+                                <strong>1개월 내: 본격 시작</strong><br>
+                                <small>정부 지원금 활용 시작</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 1.5rem; padding: 1rem; background: #f8f9fa; border-radius: 8px; text-align: center;">
+                        <strong>💡 특별 혜택</strong><br>
+                        첫 상담 시 AI 마케팅 전략 무료 컨설팅 제공
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">지금 시작하세요!</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9;">
+                제주의 전통과 미래 기술이 만나는 혁신적 여정에 함께하세요
+            </p>
+            <a href="mailto:whipia@naver.com?subject=제주그래퍼×장인만두 협력 문의&body=안녕하세요. 협력 프로젝트에 대해 문의드립니다." class="cta-button">
+                파일럿 프로젝트 문의하기
+            </a>
+            <a href="tel:010-6778-9199" class="cta-button secondary">
+                전화 상담 받기
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 제주그래퍼 × 장인만두 협력 이니셔티브</p>
+            <p style="margin-top: 0.5rem; opacity: 0.7;">제주의 전통과 미래 기술이 만나는 혁신적 여정</p>
+        </div>
+    </footer>
 
     <script>
-        // 부드러운 스크롤 효과
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -688,35 +1003,43 @@
             });
         });
 
-        // 스크롤 애니메이션
+        // Animate progress bars on scroll
         const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+            threshold: 0.3,
+            rootMargin: '0px 0px -100px 0px'
         };
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
+                    const progressBars = entry.target.querySelectorAll('.progress-fill');
+                    progressBars.forEach(bar => {
+                        const width = bar.getAttribute('data-width') || bar.style.width;
+                        bar.style.width = '0%';
+                        setTimeout(() => {
+                            bar.style.width = width;
+                        }, 200);
+                    });
                 }
             });
         }, observerOptions);
 
-        // 애니메이션 대상 요소들 설정
-        document.querySelectorAll('.service-card, .partner-card, .timeline-content').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(el);
+        // Observe progress containers
+        document.querySelectorAll('.progress-container').forEach(container => {
+            observer.observe(container);
         });
 
-        // CTA 버튼 클릭 이벤트
-        document.querySelectorAll('.cta-button').forEach(button => {
-            button.addEventListener('click', function(e) {
-                // 실제 구현시 연락처 정보나 문의 폼으로 연결
-                console.log('파일럿 프로젝트 문의');
+        // Add animation classes on scroll
+        const animateObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-on-scroll');
+                }
             });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.card').forEach(card => {
+            animateObserver.observe(card);
         });
     </script>
 </body>
